@@ -4,8 +4,9 @@
 	"licence": "MIT",
 	"version": "1.0.0-dev",
 	"scripts": {
-		"build": "npx tsc",
-		"pkg": "npx pkg ./build/index.js -c package.json"
+		"clean": "rm -rf build",
+		"build": "yarn run clean && yarn run tsc",
+		"package": "yarn run pkg ./build/index.js -c package.json"
 	},
 	"devDependencies": {
 		"@typescript-eslint/eslint-plugin": "^5.49.0",
