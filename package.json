@@ -1,5 +1,6 @@
 {
 	"private": true,
+	"type": "module",
 	"name": "mc-server-get",
 	"licence": "MIT",
 	"version": "1.0.0-dev",

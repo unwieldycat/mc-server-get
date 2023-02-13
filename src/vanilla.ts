@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { userInfo } from 'os';
-import { program, downloadFile } from './main';
+import { program, downloadFile } from './main.js';
 import { OptionValues } from 'commander';
 
 // ============================= Main function ============================= //
