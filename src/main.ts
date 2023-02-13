@@ -25,13 +25,14 @@ program.parse();
 async function downloadFile(fileName: string, url: string, outputDir: string): Promise<void> {
 	outputDir = path.normalize(outputDir);
 	const homeRegexp = /~\//; // Looks for file paths starting with "~/"
-	outputDir.replace(homeRegexp, userInfo().homedir);
+	outputDir = outputDir.replace(homeRegexp, `${userInfo().homedir}/`);
 
 	fs.access(outputDir, (err) => {
 		if (err) program.error(`An error occurred accessing directory ${outputDir}: ${err.message}`);
 	});
 
-	const outputFile = path.resolve(outputDir, fileName);
+	const fileExtension = url.match(/\/\w+(\.\w+)$/)?.[1];
+	const outputFile = path.resolve(outputDir, `${fileName}${fileExtension}`);
 	fs.writeFile(outputFile, '', (err) => {
 		if (err) program.error(`An error occurred making file: ${err}`);
 	});
