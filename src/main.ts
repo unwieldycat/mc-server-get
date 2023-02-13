@@ -46,4 +46,6 @@ async function downloadFile(fileName: string, url: string, outputDir: string): P
 	});
 }
 
+// TODO: Add pretty output
+
 export { program, downloadFile };
