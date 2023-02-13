@@ -1,0 +1,2 @@
+# mc-server-get
+Mc-server-get (name pending) is a CLI utility to fetch minecraft server binaries with one step. Made for those who create servers frequently and are tired of searching for download URLs. 
